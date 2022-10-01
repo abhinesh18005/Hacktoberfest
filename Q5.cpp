@@ -6,6 +6,28 @@ public:
         int n = s.length();
         int m = p.length();
         int i=0;
+        string p1 = "";
+        while(i<m){
+            if(p[i]=='*'){
+                p1+=p[i];
+                while(i<m && p[i]=='*'){
+                    i++;
+                }
+            }else{
+                p1+=p[i];
+                i++;
+            }
+            
+        }
+        
+        p = p1;
+        m = p.length();
+        if(n==0){
+            if(p=="*" || p==""){
+                return true;
+            }
+            return false;
+        }
         
         
         
