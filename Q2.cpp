@@ -2,7 +2,23 @@ class Solution {
 public:
     
     
-    
+    string getnew_pattern(string p,int n){
+        string p2 = "";
+        int i=0;
+        while(i<n){
+            if(p[i]=='*'){
+                p2+='*';
+                while(i<n && p[i]=='*'){
+                    i++;
+                }
+            }
+            if(i<n){
+                p2+=p[i];
+            }
+            i++;
+        }
+        return p2;
+    }
     
     bool isMatch(string s, string p) {
         
