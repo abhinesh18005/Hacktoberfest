@@ -2,7 +2,19 @@ class Solution {
 public:
     
     
-
+  bool checkSubstring(unordered_map<string, int> wordCount, string s, int wordLen) {
+        for(int j=0; j<s.size(); j+=wordLen) {
+            string w = s.substr(j, wordLen);
+            if(wordCount.find(w) != wordCount.end()) {
+                if(--wordCount[w] == -1) {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
     vector<int> findSubstring(string s, vector<string>& words) {
         vector<int> res;
         int wordLen = words[0].size();
