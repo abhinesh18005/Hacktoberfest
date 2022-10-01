@@ -9,7 +9,13 @@ public:
         ListNode *pre = dummy,*curr= dummy,*nex = dummy;
         
         
-        
+        dummy->next=head;
+        curr = head;
+        int len = 0;
+        while(curr!=NULL){
+            len++;
+            curr = curr->next;
+        }+
         while(len>=k){
             curr = pre->next;
             nex = curr->next;
