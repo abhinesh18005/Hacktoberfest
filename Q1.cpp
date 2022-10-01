@@ -31,6 +31,14 @@ public:
         int n = A.size();
         int m = B.size();
        
-        return (n+m)/2;
+        if( (n+m)%2==1){
+            return fun(A,B,(n+m+1)/2);
+        }else{
+            int mid = (n+m)/2;
+            double a = fun(A,B,mid);
+            double b = fun(A,B,mid+1);
+            //cout<<a<<" "<<b<<"\n";
+            return (a+b)/2;
+        }
     }
 };
